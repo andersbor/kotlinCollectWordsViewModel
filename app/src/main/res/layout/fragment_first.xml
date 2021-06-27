@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FirstFragment">
+
+    <EditText
+        android:id="@+id/editText_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Word"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save word" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear words" />
+
+    <!--Button
+        android:id="@+id/button_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show words" /-->
+
+    <Button
+        android:id="@+id/button_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show words (simple)" />
+
+    <Button
+        android:id="@+id/button_show_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show words (another way ...)" />
+
+    <TextView
+        android:id="@+id/textView_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
