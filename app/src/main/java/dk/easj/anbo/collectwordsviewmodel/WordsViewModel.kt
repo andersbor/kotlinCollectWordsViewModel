@@ -9,7 +9,7 @@ class WordsViewModel : ViewModel() {
     private var mutableLiveData: MutableLiveData<List<String>> = MutableLiveData()
 
     // Immutable access to list of words
-    // Client is not supposed to replace the full list
+    // Observer is not supposed to replace the full list
     val words: LiveData<List<String>> = mutableLiveData
 
     fun add(newWord: String) {
@@ -22,7 +22,7 @@ class WordsViewModel : ViewModel() {
         mutableLiveData.value = _words
     }
 
-    operator fun get(position: Int): String {
+    operator fun get(position: Int): String { // [] operator overloading
         return _words[position]
     }
 

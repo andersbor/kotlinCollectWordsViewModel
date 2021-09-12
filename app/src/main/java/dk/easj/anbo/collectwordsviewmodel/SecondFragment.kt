@@ -9,13 +9,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import dk.easj.anbo.collectwordsviewmodel.databinding.FragmentSecondBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
-
-    // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
 
     private val wordsViewModel: WordsViewModel by activityViewModels()

@@ -1,5 +1,6 @@
 package dk.easj.anbo.collectwordsviewmodel
 
+import android.content.Context
 import android.os.Bundle
 import android.text.InputType
 import android.view.Menu
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
         inputField.hint = "Enter a word"
         inputField.inputType = InputType.TYPE_CLASS_TEXT
         builder.setView(inputField)
+        //builder.setView(createEditText(this, "Enter a word", InputType.TYPE_CLASS_TEXT))
         builder.setPositiveButton("OK") { dialog, which ->
             val word = inputField.text.toString().trim()
             if (word.isEmpty()) {
@@ -78,5 +80,12 @@ class MainActivity : AppCompatActivity() {
         }
         builder.setNegativeButton("Cancel") { dialog, which -> dialog.cancel() }
         builder.show()
+    }
+
+    private fun createEditText(context: Context, hint: String, inputType: Int): EditText {
+        val editText = EditText(context)
+        editText.hint = hint
+        editText.inputType = inputType
+        return editText
     }
 }

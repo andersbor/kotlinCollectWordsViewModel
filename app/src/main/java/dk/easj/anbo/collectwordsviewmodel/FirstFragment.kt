@@ -9,9 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import dk.easj.anbo.collectwordsviewmodel.databinding.FragmentFirstBinding
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
 
