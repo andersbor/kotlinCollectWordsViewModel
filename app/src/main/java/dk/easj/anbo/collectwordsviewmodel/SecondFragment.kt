@@ -26,9 +26,9 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        wordsViewModel.words.observe(viewLifecycleOwner, { words: List<String> ->
+        wordsViewModel.words.observe(viewLifecycleOwner) { words: List<String> ->
             binding.textviewSecond.text = "Words: $words"
-        })
+        }
 
         binding.buttonSecond.setOnClickListener {
             // findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)

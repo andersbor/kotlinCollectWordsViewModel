@@ -8,8 +8,8 @@ class WordsViewModel : ViewModel() {
     private var _words = mutableListOf<String>()
     private var mutableLiveData: MutableLiveData<List<String>> = MutableLiveData()
 
-    // Immutable access to list of words
-    // Observer is not supposed to replace the full list
+    // Immutable access to list of words:
+    // Clients are not allowed to replace the full list
     val words: LiveData<List<String>> = mutableLiveData
 
     fun add(newWord: String) {

@@ -41,13 +41,13 @@ class FirstFragment : Fragment() {
             wordsViewModel.clear()
         }
 
-        wordsViewModel.words.observe(viewLifecycleOwner, { words ->
+        wordsViewModel.words.observe(viewLifecycleOwner) { words ->
             if (words.isEmpty()) {
                 binding.textViewMessage.text = "No words"
             } else {
                 binding.textViewMessage.text = words.toString()
             }
-        })
+        }
 
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
@@ -56,7 +56,6 @@ class FirstFragment : Fragment() {
         binding.buttonShowRecyclerView.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_thirdFragment)
         }
-
     }
 
     override fun onDestroyView() {

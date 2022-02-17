@@ -31,7 +31,7 @@ class ThirdFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        wordsViewModel.words.observe(viewLifecycleOwner, { words: List<String> ->
+        wordsViewModel.words.observe(viewLifecycleOwner) { words: List<String> ->
             if (words.isEmpty()) {
                 binding.textViewMessage.text = "No words"
             } else {
@@ -40,7 +40,7 @@ class ThirdFragment : Fragment() {
                 binding.recyclerView.adapter =
                     MyAdapter(words) { position -> onListItemClick(position) }
             }
-        })
+        }
 
         binding.buttonAdd.setOnClickListener {
             val word = binding.editTextWord.text.trim().toString()
