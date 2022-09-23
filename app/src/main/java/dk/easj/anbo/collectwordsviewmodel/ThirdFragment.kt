@@ -9,15 +9,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import dk.easj.anbo.collectwordsviewmodel.databinding.FragmentThirdBinding
 
 
 class ThirdFragment : Fragment() {
     private var _binding: FragmentThirdBinding? = null
-
-    // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
-
     private val wordsViewModel: WordsViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -51,7 +49,8 @@ class ThirdFragment : Fragment() {
 
     private fun onListItemClick(position: Int) {
         Log.d("APPLE", wordsViewModel[position])
-        Toast.makeText(activity, "You clicked " + wordsViewModel[position], Toast.LENGTH_SHORT).show()
+        Snackbar.make(binding.textViewMessage, "You clicked " + wordsViewModel[position], Snackbar.LENGTH_SHORT).show()
+        //Toast.makeText(activity, "You clicked " + wordsViewModel[position], Toast.LENGTH_SHORT).show()
         wordsViewModel.remove(position)
     }
 
@@ -59,6 +58,4 @@ class ThirdFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }

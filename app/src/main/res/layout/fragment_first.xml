@@ -41,7 +41,7 @@
         android:id="@+id/button_show_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show words (another way ...)" />
+        android:text="Show words (RecyclerView)" />
 
     <TextView
         android:id="@+id/textView_message"
