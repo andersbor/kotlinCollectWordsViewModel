@@ -30,6 +30,6 @@
     <fragment
         android:id="@+id/thirdFragment"
         android:name="dk.easj.anbo.collectwordsviewmodel.ThirdFragment"
-        android:label="fragment_third"
+        android:label="Third Fragment, RecyclerView"
         tools:layout="@layout/fragment_third" />
 </navigation>
