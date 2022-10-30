@@ -2,11 +2,10 @@ package dk.easj.anbo.collectwordsviewmodel
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
@@ -34,22 +33,25 @@ class ThirdFragment : Fragment() {
                 binding.textViewMessage.text = "No words"
             } else {
                 binding.textViewMessage.text = ""
-                binding.recyclerView.layoutManager = LinearLayoutManager(activity)
-                binding.recyclerView.adapter =
-                    MyAdapter(words) { position -> onListItemClick(position) }
             }
+            binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+            binding.recyclerView.adapter =
+                MyAdapter(words) { position -> onListItemClick(position) }
         }
 
         binding.buttonAdd.setOnClickListener {
             val word = binding.editTextWord.text.trim().toString()
             wordsViewModel.add(word)
-
         }
     }
 
     private fun onListItemClick(position: Int) {
         Log.d("APPLE", wordsViewModel[position])
-        Snackbar.make(binding.textViewMessage, "You clicked " + wordsViewModel[position], Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(
+            binding.textViewMessage,
+            "You clicked " + wordsViewModel[position],
+            Snackbar.LENGTH_SHORT
+        ).show()
         //Toast.makeText(activity, "You clicked " + wordsViewModel[position], Toast.LENGTH_SHORT).show()
         wordsViewModel.remove(position)
     }
