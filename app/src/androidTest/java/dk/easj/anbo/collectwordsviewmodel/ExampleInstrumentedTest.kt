@@ -50,6 +50,6 @@ class ExampleInstrumentedTest {
         onView(withText("Anders")).check(matches(isDisplayed()))
         onView(withText("Peter")).check(matches(isDisplayed()))
 
-        
+
     }
 }
