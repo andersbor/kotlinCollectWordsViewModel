@@ -1,6 +1,5 @@
 package dk.easj.anbo.collectwordsviewmodel
 
-import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -28,7 +27,7 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun ATypeWords() {
+    fun typeWords() {
         onView(withText("Collect Words")).check(matches(isDisplayed()))
 
         onView(withId(R.id.editText_word)).perform(typeText("Anders"))
